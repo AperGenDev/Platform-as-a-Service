@@ -5,7 +5,7 @@ WORKDIR /app
 COPY task-manager/go.mod task-manager/go.sum ./
 RUN go mod download
 
-COPY *.go ./
+COPY task-manager/*.go ./
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-my-program
 
