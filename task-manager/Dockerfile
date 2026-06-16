@@ -2,7 +2,7 @@ FROM golang:1.26.3
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
+COPY task-manager/go.mod task-manager/go.sum ./
 RUN go mod download
 
 COPY *.go ./
