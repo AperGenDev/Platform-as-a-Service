@@ -65,8 +65,6 @@ func main() {
 
 	})
 
-	// удаление задачи
-
 	r.DELETE("/tasks/:id", func(ctx *gin.Context) {
 		taskID, err := strconv.Atoi(ctx.Param("id"))
 		if err != nil {
