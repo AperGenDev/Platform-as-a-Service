@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: task-manager
-        image: damirkrepe/task-manager:0.1
+        image: damirkrepe/task-manager:0.3
         ports:  
         - containerPort: 8080  
 ---
