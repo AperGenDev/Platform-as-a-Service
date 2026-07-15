@@ -1,9 +1,9 @@
 FROM golang:1.26.3 AS builder
 WORKDIR /app
 
-COPY go.mod go.sum ./
+COPY task-manager/go.mod task-manager/go.sum ./
 RUN go mod download
-COPY *.go ./
+COPY task-manager/*.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /docker-my-program .
 
 FROM alpine:latest
