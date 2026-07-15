@@ -30,7 +30,8 @@ export async function createTask(task) {
     });
 
     if (!response.ok) {
-        throw new Error("Cannot create task");
+        const text = await response.text();
+        throw new Error(`${response.status}: ${text}`);
     }
 
     return response.json();

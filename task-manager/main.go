@@ -18,7 +18,6 @@ type Task struct {
 	UpdateAt    time.Time `json:"updated_at"`
 }
 
-
 var tasks = []Task{
 	{
 		ID:    1,
@@ -31,9 +30,22 @@ func main() {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-    AllowOrigins: []string{"http://localhost:5173"},
-    AllowMethods: []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},
-    AllowHeaders: []string{"Origin", "Content-Type", "Accept"},
+		AllowOrigins: []string{
+			"http://localhost:5173",
+			"http://127.0.0.1:5173",
+		},
+		AllowMethods: []string{
+			"GET",
+			"POST",
+			"PATCH",
+			"DELETE",
+			"OPTIONS",
+		},
+		AllowHeaders: []string{
+			"Origin",
+			"Content-Type",
+			"Accept",
+		},
 	}))
 
 	r.GET("/api/health", func(ctx *gin.Context) {

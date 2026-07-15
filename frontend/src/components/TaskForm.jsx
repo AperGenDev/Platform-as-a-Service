@@ -20,6 +20,7 @@ function TaskForm({ onCreated }) {
                 description,
                 priority,
             });
+            console.log("Task created");
 
             setTitle("");
             setDescription("");
@@ -28,9 +29,8 @@ function TaskForm({ onCreated }) {
             onCreated();
 
         } catch (err) {
-
-            alert("Cannot create task");
-
+            console.error(err);
+            alert(err.message);
         }
 
     }
