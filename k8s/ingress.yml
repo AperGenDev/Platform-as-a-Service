@@ -9,10 +9,19 @@ spec:
   - host: task-manager.local
     http:
       paths: 
-      - path: /
+
+      - path: /api
         pathType: Prefix
         backend:
           service:
             name: my-service
+            port:
+              number: 80
+      
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service-frontend
             port:
               number: 80
